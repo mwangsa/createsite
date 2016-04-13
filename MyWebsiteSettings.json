@@ -1,0 +1,53 @@
+{
+	"SiteName": "MyWebsite",
+	"PhysicalPath": "C:\\DemoSite",
+	"SitePort": "80",
+	"IPAddress" : "*",
+	"ssl": true,
+	"SslPort": "443",
+	"WindowsAuthentication": false,
+	"AnonymousAuthentication": true,
+	"BasicAuthentication": false,
+	"SitePoolName": "MyDefaultWebsiteMainAppPool",
+	"Certificate" : "localhost",
+	"HostHeader" : "",
+	"NetPipe" : false,
+	"NetTcp" : false,
+	"VirtualDirectories": [{
+			"VirtualName": "DemoApp",
+			"Type": "Application",
+			"VirtualPath": "C:\\DemoSite\\DemoApp",
+			"PoolName": "MyDefaultWebsiteDemoAppPool",
+			"ClientCert": "Ignore",
+			"SSLFlags" : "0" 
+		}, {
+			"VirtualName": "DemoVirtualDir1",
+			"Type": "VirtualDirectory",
+			"VirtualPath": "C:\\DemoSite\\DemoVirtualDir1",
+			"ClientCert": "Ignore",
+			"SSLFlags" : "0" 
+		}, {
+			"VirtualName": "DemoVirtualDir2",
+			"Type": "VirtualDirectory",
+			"VirtualPath": "C:\\DemoSite\\DemoVirtualDir2",
+			"ClientCert": "Ignore",
+			"SSLFlags" : "0" 
+		}
+	],
+	"AppPools": [{
+			"PoolName": "MyDefaultWebsiteMainAppPool",
+			"DotnetFramework": "4.0",
+			"pipelineMode": "Integrated",
+			"Enable32BitApponWin64": true,
+			"IdentityType": "NetworkService",
+			"RecycleInterval" : "0"
+		}, {
+			"PoolName": "MyDefaultWebsiteDemoAppPool",
+			"DotnetFramework": "4.0",
+			"pipelineMode": "Integrated",
+			"Enable32BitApponWin64": true,
+			"IdentityType" : "ApplicationPoolIdentity",
+			"RecycleInterval" : "8"
+		}
+	]
+}
